@@ -1,13 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        maven 'Maven-3.9'
+    }
 
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/akbarali2k6/maven-demo.git'
-            }
-        }
+    stages {
 
         stage('Build & Test') {
             steps {
